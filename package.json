@@ -1,0 +1,35 @@
+{
+  "name": "@croncool/croncool-js-client",
+  "version": "0.0.0",
+  "description": "http client for cron.cool",
+  "type": "commonjs",
+  "sideEffects": false,
+  "scripts": {
+    "publish": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/croncool/croncool-js-client"
+  },
+  "keywords": [
+    "croncool",
+    "cron cool",
+    "cron jobs",
+    "health checks"
+  ],
+  "author": "CronCool",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/croncool/croncool-js-client/issues"
+  },
+  "homepage": "https://www.cron.cool/",
+  "dependencies": {
+    "@multilocale/check": "0.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.20.5",
+    "@babel/preset-env": "7.20.2",
+    "nock": "13.2.9",
+    "publint": "^0.1.9"
+  }
+}

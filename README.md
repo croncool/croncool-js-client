@@ -1,2 +1,3 @@
 # croncool-js-client
-http client for cron.cool
+
+[croncool](https://www.cron.cool/) Javascript client for the CronCool APIs.
