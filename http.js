@@ -1,12 +1,11 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
+import { getApiKey } from './apiKey.js'
 import failure from './failure.js'
-import getCroncoolUrl from './getCroncoolUrl.js'
+import getCroncoolApiUrl from './getCroncoolApiUrl.js'
 import httpWithoutHeaders from './httpWithoutHeaders.js'
 import refreshAccessToken from './refreshAccessToken.js'
 
 export default async function http(config, customFailure) {
-  let accessToken = await refreshAccessToken()
-
   if (!config.headers) {
     config.headers = {}
   }
@@ -14,10 +13,20 @@ export default async function http(config, customFailure) {
   config.headers.Accept = config.headers.Accept || 'application/json'
   config.headers['Content-Type'] =
     config.headers['Content-Type'] || 'application/json'
-  config.headers.Authorization =
-    config.headers.Authorization || 'Token ' + btoa(accessToken || '')
+  if (!config.headers.Authorization) {
+    let apiKey = getApiKey()
 
-  const url = getCroncoolUrl() + '/api/' + config.url
+    if (apiKey) {
+      config.headers.Authorization = 'Basic ' + btoa(apiKey)
+    } else {
+      let accessToken = await refreshAccessToken()
+      if (accessToken) {
+        config.headers.Authorization = 'Token ' + btoa(accessToken || '')
+      }
+    }
+  }
+
+  const url = getCroncoolApiUrl() + '/api/' + config.url
 
   console.log(`http ${config.method} ${url}`)
 

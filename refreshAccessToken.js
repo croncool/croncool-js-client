@@ -4,7 +4,7 @@ import {
   isAccessTokenExpired,
   setAccessToken,
 } from './accessToken.js'
-import getCroncoolUrl from './getCroncoolUrl.js'
+import getCroncoolApiUrl from './getCroncoolApiUrl.js'
 import {
   getRefreshToken,
   isRefreshTokenExpired,
@@ -24,7 +24,7 @@ export default async function refreshAccessToken() {
     } else {
       let refreshToken = getRefreshToken()
 
-      const url = getCroncoolUrl() + '/api/refresh-access-token'
+      const url = getCroncoolApiUrl() + '/api/refresh-access-token'
 
       let result = await fetch(url, {
         method: 'POST',
