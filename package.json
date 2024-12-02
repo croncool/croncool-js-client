@@ -1,6 +1,6 @@
 {
   "name": "@croncool/croncool-js-client",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "http client for cron.cool",
   "type": "commonjs",
   "sideEffects": false,
