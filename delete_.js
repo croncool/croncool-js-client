@@ -1,8 +1,8 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
-const failureIgnoreNotFoundOrNotModified = require('./failureIgnoreNotFoundOrNotModified.js')
-const http = require('./http.js')
+import failureIgnoreNotFoundOrNotModified from './failureIgnoreNotFoundOrNotModified.js'
+import http from './http.js'
 
-module.exports = function delete_(config, customFailure) {
+export default function delete_(config, customFailure) {
   config.method = 'DELETE'
 
   if (!customFailure) {

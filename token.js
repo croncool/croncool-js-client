@@ -2,18 +2,12 @@
 
 let token = null
 
-function getToken() {
+export function getToken() {
   return token
 }
 
-function setToken(token_) {
+export function setToken(token_) {
   token = btoa(token_)
 }
 
-const setTokenForCroncoolClient = setToken
-
-module.exports = {
-  getToken,
-  setToken,
-  setTokenForCroncoolClient,
-}
+export const setTokenForCroncoolClient = setToken

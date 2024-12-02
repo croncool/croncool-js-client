@@ -1,8 +1,8 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
-const checkStringNotEmpty = require('@multilocale/check/checkStringNotEmpty.js')
-const get = require('./get.js')
+import checkStringNotEmpty from '@multilocale/check/checkStringNotEmpty.js'
+import get from './get.js'
 
-module.exports = function getJobById(jobId) {
+export default function getJobById(jobId) {
   checkStringNotEmpty(jobId)
 
   let url = `jobs/${jobId}`

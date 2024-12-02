@@ -1,8 +1,8 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
-const checkStringNotEmpty = require('@multilocale/check/checkStringNotEmpty.js')
-const delete_ = require('./delete_.js')
+import checkStringNotEmpty from '@multilocale/check/checkStringNotEmpty.js'
+import delete_ from './delete_.js'
 
-module.exports = function deleteJobById(jobId) {
+export default function deleteJobById(jobId) {
   checkStringNotEmpty(jobId)
 
   let url = `jobs/${jobId}`

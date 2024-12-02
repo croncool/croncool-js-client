@@ -1,17 +1,17 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
-const {
+import {
   getAccessToken,
   isAccessTokenExpired,
   setAccessToken,
-} = require('./accessToken.js')
-const getCroncoolUrl = require('./getCroncoolUrl.js')
-const {
+} from './accessToken.js'
+import getCroncoolUrl from './getCroncoolUrl.js'
+import {
   getRefreshToken,
   isRefreshTokenExpired,
   setRefreshToken,
-} = require('./refreshToken.js')
+} from './refreshToken.js'
 
-module.exports = async function refreshAccessToken() {
+export default async function refreshAccessToken() {
   let accessToken = getAccessToken()
 
   if (accessToken && isAccessTokenExpired()) {

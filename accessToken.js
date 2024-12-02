@@ -3,7 +3,7 @@
 let accessToken = null
 let callback = null
 
-function getAccessTokenPayload() {
+export function getAccessTokenPayload() {
   let payload
 
   if (accessToken) {
@@ -17,7 +17,7 @@ function getAccessTokenPayload() {
   return payload
 }
 
-function isAccessTokenExpired() {
+export function isAccessTokenExpired() {
   let isExpired = true
 
   try {
@@ -35,11 +35,11 @@ function isAccessTokenExpired() {
   return isExpired
 }
 
-function getAccessToken() {
+export function getAccessToken() {
   return accessToken
 }
 
-function setAccessToken(accessToken_) {
+export function setAccessToken(accessToken_) {
   const newAccessToken = accessToken_
 
   if (accessToken !== newAccessToken) {
@@ -51,19 +51,9 @@ function setAccessToken(accessToken_) {
   }
 }
 
-function setAccessTokenCallback(callback_) {
+export function setAccessTokenCallback(callback_) {
   callback = callback_
 }
 
-const setAccessTokenForCroncoolClient = setAccessToken
-const setAccessTokenCallbackForCroncoolClient = setAccessTokenCallback
-
-module.exports = {
-  getAccessTokenPayload,
-  isAccessTokenExpired,
-  getAccessToken,
-  setAccessToken,
-  setAccessTokenCallback,
-  setAccessTokenForCroncoolClient,
-  setAccessTokenCallbackForCroncoolClient,
-}
+export const setAccessTokenForCroncoolClient = setAccessToken
+export const setAccessTokenCallbackForCroncoolClient = setAccessTokenCallback

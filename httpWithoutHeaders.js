@@ -1,7 +1,7 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
-const failure = require('./failure.js')
+import failure from './failure.js'
 
-module.exports = function httpWithoutHeaders(url, customFailure) {
+export default function httpWithoutHeaders(url, customFailure) {
   return fetch(url)
     .then(response => {
       if (!response.ok) {

@@ -1,7 +1,7 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
-const get = require('./get.js')
+import get from './get.js'
 
-module.exports = function getJobs(parameters) {
+export default function getJobs(parameters) {
   let url = 'jobs'
 
   url += '?' + new URLSearchParams(parameters).toString()

@@ -1,10 +1,10 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
-const failure = require('./failure.js')
-const getCroncoolUrl = require('./getCroncoolUrl.js')
-const httpWithoutHeaders = require('./httpWithoutHeaders.js')
-const refreshAccessToken = require('./refreshAccessToken.js')
+import failure from './failure.js'
+import getCroncoolUrl from './getCroncoolUrl.js'
+import httpWithoutHeaders from './httpWithoutHeaders.js'
+import refreshAccessToken from './refreshAccessToken.js'
 
-module.exports = async function http(config, customFailure) {
+export default async function http(config, customFailure) {
   let accessToken = await refreshAccessToken()
 
   if (!config.headers) {

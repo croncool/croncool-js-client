@@ -1,7 +1,7 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
-const get = require('./get.js')
+import get from './get.js'
 
-module.exports = function getProjects() {
+export default function getProjects() {
   let url = 'projects'
 
   return get({ url }).catch(error => {

@@ -1,6 +1,6 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
 
-module.exports = {
+export default {
   presets: [
     [
       '@babel/preset-env',

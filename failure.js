@@ -1,6 +1,6 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
-const ClientError = require('./ClientError.js')
+import ClientError from './ClientError.js'
 
-module.exports = function failure(response) {
+export default function failure(response) {
   throw new ClientError(response)
 }

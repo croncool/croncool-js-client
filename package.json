@@ -1,9 +1,9 @@
 {
   "name": "@croncool/croncool-js-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "http client for cron.cool",
-  "type": "commonjs",
-  "sideEffects": false,
+  "type": "module",
+  "sideEffects": true,
   "scripts": {
     "publish": "npm publish --access public"
   },

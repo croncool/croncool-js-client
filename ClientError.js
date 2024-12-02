@@ -46,4 +46,4 @@ ClientError.prototype.toString = function toString() {
   return this.message
 }
 
-module.exports = ClientError
+export default ClientError

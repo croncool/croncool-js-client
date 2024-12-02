@@ -3,4 +3,4 @@ function getCroncoolUrl() {
   return 'https://www.cron.cool'
 }
 
-module.exports = getCroncoolUrl
+export default getCroncoolUrl

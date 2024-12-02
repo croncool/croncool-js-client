@@ -2,7 +2,7 @@
 
 let refreshToken = null
 
-function isRefreshTokenExpired() {
+export function isRefreshTokenExpired() {
   let isExpired = true
 
   try {
@@ -21,19 +21,12 @@ function isRefreshTokenExpired() {
   return isExpired
 }
 
-function getRefreshToken() {
+export function getRefreshToken() {
   return refreshToken
 }
 
-function setRefreshToken(refreshToken_) {
+export function setRefreshToken(refreshToken_) {
   refreshToken = refreshToken_
 }
 
-const setRefreshTokenForCroncoolClient = setRefreshToken
-
-module.exports = {
-  isRefreshTokenExpired,
-  getRefreshToken,
-  setRefreshToken,
-  setRefreshTokenForCroncoolClient,
-}
+export const setRefreshTokenForCroncoolClient = setRefreshToken

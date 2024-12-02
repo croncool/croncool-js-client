@@ -1,7 +1,7 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
-const post = require('./post.js')
+import post from './post.js'
 
-module.exports = function login(email, password) {
+export default function login(email, password) {
   const headers = {
     Authorization: `Basic ${btoa(email + ':' + password)}`,
   }
