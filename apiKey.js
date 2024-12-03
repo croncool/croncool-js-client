@@ -1,16 +1,22 @@
 /* Copyright 2013 - 2024 Waiterio LLC */
 
-let apiKey = null
-
 export function getApiKey() {
+  let apiKey
+
+  if (typeof process !== 'undefined') {
+    apiKey = process.env.CRONCOOL_API_KEY
+  } else if (typeof window !== 'undefined') {
+    apiKey = window.CRONCOOL_API_KEY
+  }
+
   return apiKey
 }
 
-export function setApiKey(apiKey_) {
-  const newApiKey = apiKey_
-
-  if (apiKey !== newApiKey) {
-    apiKey = newApiKey
+export function setApiKey(apiKey) {
+  if (typeof process !== 'undefined') {
+    process.env.CRONCOOL_API_KEY = apiKey
+  } else if (typeof window !== 'undefined') {
+    window.CRONCOOL_API_KEY = apiKey
   }
 }
 
